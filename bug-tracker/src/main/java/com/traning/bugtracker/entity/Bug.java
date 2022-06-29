@@ -17,18 +17,24 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Data;
 
+/*
+ * Relationships
+ *  OneToOne
+ *  ManyToOne
+
 /**
  * @author vinugurt
  * Bug is entity
  * 
  *
  */
+//class declaration
 @Entity(name = "Bug")
 @Data
 @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class Bug implements Serializable {
 
-	/**
+	/**@param bug id
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
@@ -40,13 +46,15 @@ public class Bug implements Serializable {
 	private String bugDescription;
 	@JsonProperty("createdDate")
 	private Date createdDate;
-
+	//@ManyToOne
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(columnDefinition = "id")
 	@JsonProperty("createdBy")
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private Employee createdBy;
 
+	
+	//@OneToOne
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(columnDefinition = "id")
 	@JsonProperty("status")

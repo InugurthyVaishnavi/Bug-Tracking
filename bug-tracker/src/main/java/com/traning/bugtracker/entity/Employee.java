@@ -13,11 +13,14 @@ import javax.persistence.OneToMany;
 
 import lombok.Data;
 
+//class declaration
+
 @Entity(name = "Employee")
 @Data
 public class Employee implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	// Fields
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -31,6 +34,8 @@ public class Employee implements Serializable {
 	@Column(name = "designation")
 	private String designation;
 
+	//@OneToOne(cascade= {CascadeType.REFRESH, CascadeType.PERSIST})
+	
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Bug> bugs;
 

@@ -146,13 +146,7 @@ Bug bug = new Bug();
 		
 	
 	}
-//	@Test
-//	@Disabled
-//	void testDeleteEmp()
-//	{
-//		Employee emp=empServ.deleteEmployee(3);
-//		assertEquals(3,emp.getEmpId());
-//	}
+
 
 
 }

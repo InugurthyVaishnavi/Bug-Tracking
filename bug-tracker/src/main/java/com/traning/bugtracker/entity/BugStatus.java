@@ -13,8 +13,8 @@ import lombok.Data;
 @Data
 public class BugStatus implements Serializable{
 	
-	/**
-	 * 
+	/**@param id
+	 * @return list of bugStatus
 	 */
 	private static final long serialVersionUID = 1L;
 

@@ -57,6 +57,7 @@ public class BugServiceImpl implements BugService {
 
 	@Override
 	public BugResponse getBugDetailsById(Long id) {
+		System.out.println("Bug id :::----------------------->"+id);
 		Bug bug = bugRepository.getReferenceById(id);
 		return setBugResponse(bug);
 	}
